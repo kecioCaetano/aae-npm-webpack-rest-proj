@@ -1,0 +1,24 @@
+{
+  "name": "aae-npm-webpack-rest-proj",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kecioCaetano/aae-npm-webpack-rest-proj.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kecioCaetano/aae-npm-webpack-rest-proj/issues"
+  },
+  "homepage": "https://github.com/kecioCaetano/aae-npm-webpack-rest-proj#readme",
+  "description": "",
+  "devDependencies": {
+    "webpack": "^5.102.1",
+    "webpack-cli": "^6.0.1"
+  }
+}
