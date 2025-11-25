@@ -4,6 +4,17 @@ import img3 from "./breakfast/3.jpg"
 import img4 from "./breakfast/4.jpg"
 import img5 from "./breakfast/5.jpg"
 
+import imgl1 from "./lunch/1.jpg"
+import imgl2 from "./lunch/2.jpg"
+import imgl3 from "./lunch/3.jpg"
+import imgl4 from "./lunch/4.jpg"
+import imgl5 from "./lunch/5.jpg"
+
+
+
+const breakfastImages = [img1, img2, img3, img4, img5];
+const lunchImages = [imgl1, imgl2, imgl3, imgl4, imgl5];
+
 export class Menu{
     
     #content;
@@ -18,35 +29,51 @@ export class Menu{
     }
 
     #render(){
-        const divCard = document.createElement("div");
+        
 
-        const breakfast = new MenuItem("Breakfast", 5).getItems;
+        const breakfast = new MenuItem("Breakfast", 5, breakfastImages).getItems;
+        const lunch = new MenuItem("Lunch", 5, lunchImages).getItems;
         // console.log(breakfast);
-        breakfast.forEach((item) =>{
-            const pPrice = document.createElement("p");
-            pPrice.textContent = `${item.name} ............... ${item.price}`;
+        this.#renderMeal(breakfast);
+        this.#renderMeal(lunch);
+        
+    }
 
+    #renderMeal(meal){
+        meal.forEach((item) =>{
+            const divCard = document.createElement("div");
+            divCard.classList.add("card");
+
+
+            const pPrice = document.createElement("p");
+            pPrice.textContent = `${item.type} - ${item.name} ........................ ${item.price}`;
+
+            const divImg = document.createElement("div");
             const image = document.createElement("img");
             image.src = item.url;
+            divImg.append(image);
 
-            const pDesc = document.createElement("p");
+            const pDesc = document.createElement("span");
             pDesc.textContent = `${item.description}`;
 
             divCard.append(pPrice);
-            divCard.append(image);
+            divCard.append(divImg);
             divCard.append(pDesc);
+            this.#content.append(divCard);
         })
-        this.#content.append(divCard);
+        
     }
 }
 
 class MenuItem{
     #item;
     #type;
+    #images;
 
-    constructor(type, length){
+    constructor(type, length, images){
         this.#item = new Array(length);
         this.#type = type;
+        this.#images = images;
         this.#load();
     }
 
@@ -55,7 +82,7 @@ class MenuItem{
             this.#item[x] = {
                 type: this.#type, 
                 name: `Dish ${x}`,
-                url: `${x}.jpg`,
+                url: this.#images[x],
                 price: this.#getRandomPrice(10,30),
                 description: ` ${x} ${x} It is a long established fact that a reader will ` 
                 + `be distracted by the ${x} readable content of a page when looking at `
