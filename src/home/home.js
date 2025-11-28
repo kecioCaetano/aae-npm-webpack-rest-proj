@@ -10,8 +10,15 @@ export class Restaurant {
      }
 
     #cache(){
-        this.#content = document.getElementById("content");
+        // this.#content = document.getElementById("content");
+        this.#content = document.createElement("div");
+        this.#content.setAttribute("id","tab-content-home");
+        this.#content.setAttribute("class", "tab-content active")
         // console.log(this.#content);
+    }
+
+    get getRestaurant(){
+        return this.#content;
     }
 
     #render(){

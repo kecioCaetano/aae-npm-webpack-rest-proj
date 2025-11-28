@@ -25,7 +25,10 @@ export class Menu{
     }
 
     #cache(){
-        this.#content = document.getElementById("content");
+        // this.#content = document.getElementById("content");
+        this.#content = document.createElement("div");
+        this.#content.setAttribute("id","tab-content-menu");
+        this.#content.setAttribute("class", "tab-content")
     }
 
     #render(){
@@ -37,6 +40,9 @@ export class Menu{
         this.#renderMeal(breakfast);
         this.#renderMeal(lunch);
         
+    }
+    get getMenu(){
+        return this.#content;
     }
 
     #renderMeal(meal){

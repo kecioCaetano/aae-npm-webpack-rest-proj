@@ -38,7 +38,7 @@ span{
     font-size: 1.4rem;
 }
 
-#content{
+#home{
     display: flex;
     flex-wrap: wrap;
     /* border: 5px solid green; */
@@ -60,3 +60,22 @@ span{
 
 }
 
+.tab-content{
+    display: none;
+}
+
+.tab-content.active{
+    display: block;
+}
+
+.tab-link {
+    /* Basic styling for tab buttons */
+    padding: 10px 15px;
+    border: 1px solid #ccc;
+    cursor: pointer;
+    background-color: #f1f1f1;
+}
+
+.tab-link.active {
+    background-color: #ddd; /* Highlight the active tab */
+}
