@@ -1,7 +1,7 @@
 {
   "name": "aae-npm-webpack-rest-proj",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "./src/responsiveImages/test.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config webpack.prod.js",

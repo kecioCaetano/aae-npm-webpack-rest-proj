@@ -79,3 +79,8 @@ span{
 .tab-link.active {
     background-color: #ddd; /* Highlight the active tab */
 }
+
+.imgResponsiveTest{
+    /* height:auto; */
+    width: 320px;
+}
